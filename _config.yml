@@ -1,0 +1,3 @@
+title: Barometer Documentation
+description: A thin wrapper over Coda Hale's metrics library for the JVM
+theme: jekyll-theme-tactile
