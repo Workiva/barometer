@@ -10,6 +10,9 @@ RUN lein deps
 # Run Tests
 RUN lein test
 
+# Lint
+RUN lein cljfmt check
+
 # Build Docs
 RUN lein docs
 RUN cd ./documentation && tar cvfz "../barometer-docs.tgz" ./

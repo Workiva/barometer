@@ -1,4 +1,20 @@
-# Barometer
+# Barometer [![Clojars Project](https://img.shields.io/clojars/v/com.workiva/barometer.svg)](https://clojars.org/com.workiva/barometer) [![CircleCI](https://circleci.com/gh/Workiva/barometer/tree/master.svg?style=svg)](https://circleci.com/gh/Workiva/barometer/tree/master)
+
+<!-- toc -->
+
+  * [Overview](#overview)
+  * [Notable features](#notable-features)
+    + [`(barometer.core/default-registry)`](#barometercoredefault-registry)
+    + [`barometer.core/with-timer`](#barometercorewith-timer)
+    + [`barometer.aspects/timed`](#barometeraspectstimed)
+    + [`barometer.aspects/concurrency-measured`](#barometeraspectsconcurrency-measured)
+- [Maintainers and Contributors](#maintainers-and-contributors)
+  * [Active Maintainers](#active-maintainers)
+  * [Previous Contributors](#previous-contributors)
+
+<!-- tocstop -->
+
+## Overview
 
 This provides a thin wrapper over Coda Hale's [metrics library for the JVM](https://metrics.dropwizard.io). It provides idiomatic constructors for [`Registry`](src/barometer/core.clj#L49) and all the individual metrics (e.g., [`Timer`](src/barometer/core.clj#L108), [`Meter`](src/barometer/core.clj#L85), [`Gauge`](src/barometer/core.clj#L127), etc.). Several [protocols](src/barometer/protocols.clj) ([`Statistical`](src/barometer/core.clj#L173), [`Metered`](src/barometer/core.clj#L193), [`Counting`](src/barometer/core.clj#L248), etc.) are extended onto the codahale objects to represent semantically-equivalent access patterns analogous to the original interfaces. A [constructor is also provided](src/barometer/core.clj#L348) for the codahale ConsoleReporter for debugging and so forth.
 

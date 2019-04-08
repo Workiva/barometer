@@ -2,7 +2,9 @@
   :description "A thin wrapper over Coda Hale's metrics library for the JVM"
   :url "https://github.com/Workiva/barometer"
   :license {:name "Apache License, Version 2.0"}
+
   :plugins [[lein-shell "0.5.0"]
+            [lein-cljfmt "0.6.4"]
             [lein-codox "0.10.3"]]
 
   :dependencies [[org.clojure/clojure "1.9.0"]
@@ -23,9 +25,12 @@
 
   :global-vars {*warn-on-reflection* true}
 
-  :aliases {"docs" ["do" "clean-docs," "codox"]
+  :aliases {"docs" ["do" "clean-docs," "with-profile" "docs" "codox"]
             "clean-docs" ["shell" "rm" "-rf" "./documentation"]}
 
-  :codox {:output-path "documentation"}
+  :codox {:metadata {:doc/format :markdown}
+          :themes [:rdash]
+          :output-path "documentation"}
 
-  :profiles {:dev [{:dependencies [[criterium "0.4.3"]]}]})
+  :profiles {:dev [{:dependencies [[criterium "0.4.3"]]}]
+             :docs {:dependencies [[codox-theme-rdash "0.1.2"]]}})
