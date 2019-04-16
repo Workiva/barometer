@@ -3,6 +3,7 @@
 <!-- toc -->
 
 - [Overview](#overview)
+- [API Documentation](#api-documentation)
 - [Notable features](#notable-features)
   * [`(barometer.core/default-registry)`](#barometercoredefault-registry)
   * [`barometer.core/with-timer`](#barometercorewith-timer)
@@ -36,6 +37,10 @@ A simple example of using a timer:
 (m/with-timer the-best-timer
    (println "Test"))
 ```
+
+## API Documentation
+
+[Clojure API documentation can be found here.](/documentation/clojure/index.html)
 
 ## Notable features
 
