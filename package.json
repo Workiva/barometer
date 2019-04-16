@@ -1,0 +1,24 @@
+{
+  "name": "barometer",
+  "version": "0.1.0",
+  "description": "A thin wrapper over Coda Hale's metrics library for the JVM",
+  "main": "index.js",
+  "directories": {
+    "test": "test"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Workiva/barometer.git"
+  },
+  "author": "",
+  "bugs": {
+    "url": "https://github.com/Workiva/barometer/issues"
+  },
+  "homepage": "https://github.com/Workiva/barometer#readme",
+  "dependencies": {
+    "markdown-toc": "^1.2.0"
+  }
+}

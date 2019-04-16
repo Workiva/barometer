@@ -49,11 +49,12 @@
 ;; CONSTRUCTORS ;;
 ;;;;;;;;;;;;;;;;;;
 
+
 (defn registry
   "The explanation is optional."
   ([explanation]
    (proxy [MetricRegistry barometer.protocols.ICanExplain]
-       []
+          []
      (explanation [] ;; WARNING: Imperative procedural fragile code!!!!!
        (->> (p/metrics this)
             (sort-by key)
@@ -67,7 +68,7 @@
        (println (p/explanation this)))))
   ([]
    (proxy [MetricRegistry barometer.protocols.ICanExplain]
-       []
+          []
      (explanation []
        (->> (p/metrics this)
             (sort-by key)
@@ -87,12 +88,12 @@
   with the provided explanation string."
   ([explanation]
    (proxy [Meter barometer.protocols.ICanExplain]
-       []
+          []
      (explanation [] explanation)
      (explain [] (println explanation))))
   ([clock explanation]
    (proxy [Meter barometer.protocols.ICanExplain]
-       [clock]
+          [clock]
      (explanation [] explanation)
      (explain [] (println explanation)))))
 
@@ -101,7 +102,7 @@
   with the provided explanation string."
   [reservoir explanation]
   (proxy [Histogram barometer.protocols.ICanExplain]
-      [reservoir]
+         [reservoir]
     (explanation [] explanation)
     (explain [] (println explanation))))
 
@@ -110,17 +111,17 @@
   with the provided explanation string."
   ([explanation]
    (proxy [Timer barometer.protocols.ICanExplain]
-       []
+          []
      (explanation [] explanation)
      (explain [] (println explanation))))
   ([reservoir explanation]
    (proxy [Timer barometer.protocols.ICanExplain]
-       [reservoir]
+          [reservoir]
      (explanation [] explanation)
      (explain [] (println explanation))))
   ([reservoir clock explanation]
    (proxy [Timer barometer.protocols.ICanExplain]
-       [reservoir clock]
+          [reservoir clock]
      (explanation [] explanation)
      (explain [] (println explanation)))))
 
@@ -139,7 +140,7 @@
   with the provided explanation string."
   [explanation]
   (proxy [Counter barometer.protocols.ICanExplain]
-      []
+         []
     (explanation [] explanation)
     (explain [] (println explanation))))
 

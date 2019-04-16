@@ -1,8 +1,10 @@
-(defproject com.workiva/barometer "0.1.0"
+(defproject com.workiva/barometer "0.0.0"
   :description "A thin wrapper over Coda Hale's metrics library for the JVM"
   :url "https://github.com/Workiva/barometer"
   :license {:name "Apache License, Version 2.0"}
+
   :plugins [[lein-shell "0.5.0"]
+            [lein-cljfmt "0.6.4"]
             [lein-codox "0.10.3"]]
 
   :dependencies [[org.clojure/clojure "1.9.0"]
@@ -16,6 +18,8 @@
 
   :deploy-repositories {"clojars"
                         {:url "https://repo.clojars.org"
+                         :username :env/clojars_username
+                         :password :env/clojars_password
                          :sign-releases false}}
 
   :source-paths      ["src"]
@@ -23,9 +27,19 @@
 
   :global-vars {*warn-on-reflection* true}
 
-  :aliases {"docs" ["do" "clean-docs," "codox"]
+  :aliases {"docs" ["do" "clean-docs," "with-profile" "docs" "codox"]
             "clean-docs" ["shell" "rm" "-rf" "./documentation"]}
 
-  :codox {:output-path "documentation"}
+  :codox {:metadata {:doc/format :markdown}
+          :themes [:rdash]
+          :html {:transforms [[:title]
+                              [:substitute [:title "Barometer API Docs"]]
+                              [:span.project-version]
+                              [:substitute nil]
+                              [:pre.deps]
+                              [:substitute [:a {:href "https://clojars.org/com.workiva/barometer"}
+                                            [:img {:src "https://img.shields.io/clojars/v/com.workiva/barometer.svg"}]]]]}
+          :output-path "documentation"}
 
-  :profiles {:dev [{:dependencies [[criterium "0.4.3"]]}]})
+  :profiles {:dev [{:dependencies [[criterium "0.4.3"]]}]
+             :docs {:dependencies [[codox-theme-rdash "0.1.2"]]}})

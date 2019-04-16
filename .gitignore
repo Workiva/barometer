@@ -2,3 +2,7 @@
 .lein-repl-history
 target/
 .nrepl-port
+/node_modules
+package-lock.json
+_site/
+Gemfile.lock
