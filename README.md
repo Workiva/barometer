@@ -2,12 +2,13 @@
 
 <!-- toc -->
 
-  * [Overview](#overview)
-  * [Notable features](#notable-features)
-    + [`(barometer.core/default-registry)`](#barometercoredefault-registry)
-    + [`barometer.core/with-timer`](#barometercorewith-timer)
-    + [`barometer.aspects/timed`](#barometeraspectstimed)
-    + [`barometer.aspects/concurrency-measured`](#barometeraspectsconcurrency-measured)
+- [Overview](#overview)
+- [API Documentation](#api-documentation)
+- [Notable features](#notable-features)
+  * [`(barometer.core/default-registry)`](#barometercoredefault-registry)
+  * [`barometer.core/with-timer`](#barometercorewith-timer)
+  * [`barometer.aspects/timed`](#barometeraspectstimed)
+  * [`barometer.aspects/concurrency-measured`](#barometeraspectsconcurrency-measured)
 - [Maintainers and Contributors](#maintainers-and-contributors)
   * [Active Maintainers](#active-maintainers)
   * [Previous Contributors](#previous-contributors)
@@ -36,6 +37,10 @@ A simple example of using a timer:
 (m/with-timer the-best-timer
    (println "Test"))
 ```
+
+## API Documentation
+
+[Clojure API documentation can be found here.](/documentation/clojure/index.html)
 
 ## Notable features
 
@@ -82,13 +87,13 @@ Also designed to work with [`morphe`](https://github.com/Workiva/morphe), this a
 
 This will create a counter and register it under the default barometer registry under the name `"my-ns.my-fn.concurrency-counter"`, with the explanation `"Concurrency counter for the function: my-ns/my-fn"`.
 
-# Maintainers and Contributors
+## Maintainers and Contributors
 
-## Active Maintainers
+### Active Maintainers
 
 -
 
-## Previous Contributors
+### Previous Contributors
 
 - Timothy Dean <galdre@gmail.com>
 - Houston King <houston.king@workiva.com>
