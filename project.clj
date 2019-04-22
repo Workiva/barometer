@@ -1,4 +1,4 @@
-(defproject com.workiva/barometer "0.1.1"
+(defproject com.workiva/barometer "0.1.2"
   :description "A thin wrapper over Coda Hale's metrics library for the JVM"
   :url "https://github.com/Workiva/barometer"
   :license {:name "Apache License, Version 2.0"}
