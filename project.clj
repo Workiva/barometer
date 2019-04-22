@@ -10,7 +10,7 @@
   :dependencies [[org.clojure/clojure "1.9.0"]
                  [com.workiva/utiliva "0.1.0"]
                  [com.workiva/recide "1.0.1"]
-                 [com.workiva/morphe "1.0.0"]
+                 [galdre/morphe "1.0.1"]
                  [org.clojure/tools.logging "0.4.0"]
                  [io.dropwizard.metrics/metrics-core "3.2.6"]
                  [io.dropwizard.metrics/metrics-graphite "3.2.6"]
